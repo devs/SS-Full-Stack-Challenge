@@ -1,9 +1,9 @@
 class PagesController < ApplicationController
   def home
-    # if current_user?
-      # displays API results
-    # else
-      # visitor path
-    # end
+    if signed_in?
+      render 'home'
+    else
+      render 'visitor_home'
+    end
   end
 end
