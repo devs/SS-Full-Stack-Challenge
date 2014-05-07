@@ -1,6 +1,12 @@
 source 'https://rubygems.org'
 
 gem 'foundation-rails'
+gem 'httparty'
+
+# Caching Stuff
+gem 'rack-cache'
+gem 'dalli'
+gem 'kgio'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
