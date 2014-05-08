@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'foundation-rails'
 gem 'httparty'
+gem 'twitter-text'
 
 # Caching Stuff
 gem 'rack-cache'

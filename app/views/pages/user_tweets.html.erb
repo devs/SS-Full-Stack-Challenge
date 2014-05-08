@@ -1,4 +1,4 @@
-<h1>#iubb</h1>
+<h1><%= @screen_name %></h1>
 <ul class="tweets">
   <% @tweets.each do |tweet| %>
     <li class="tweet">
@@ -16,7 +16,7 @@
         <h4><%= tweet["user"]["screen_name"] %></h4>
         <p><%= tweet["user"]["location"] %></p>
         <p><%= tweet["user"]["description"] %></p>
-        <p><%= link_to "view more", user_tweets_path(:screen_name => tweet["user"]["screen_name"]) %></p>
+        <p><a href="#">view more</a></p>
         <a class="close-reveal-modal">&#215;</a>
       </div>
     </li>

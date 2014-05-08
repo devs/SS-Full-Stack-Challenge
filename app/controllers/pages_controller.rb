@@ -17,4 +17,21 @@ class PagesController < ApplicationController
       render 'visitor_home'
     end
   end
+  
+  def user_tweets
+    @screen_name = params["screen_name"]
+    
+    if TweetRequest.dupe_request("user", @screen_name).recent.any?
+      @request = TweetRequest.dupe_request("user", @screen_name).recent.first
+    else
+      @request = TweetRequest.new(:request_type => "user", :parameter => @screen_name)
+      @request.save
+    end
+    
+    @tweets = @request.tweets
+  end
+  
+  def search
+    
+  end
 end

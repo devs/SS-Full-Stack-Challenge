@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <tr>
+      <th>When?</th>
+      <th>Request Type</th>
+      <th>Parameter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @requests.each do |request| %>
+      <tr>
+        <td><%= request.created_at %></td>
+        <td><%= request.request_type %></td>
+        <td><%= request.parameter %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
