@@ -1,0 +1,4 @@
+<% if request.env['PATH_INFO'] != "/requests" %>
+  <br />
+  <div class="center"><%= link_to "See API requests", requests_path, :class => "button" %></div>
+<% end %>

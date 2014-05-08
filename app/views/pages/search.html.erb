@@ -1,14 +1,11 @@
-<%= form_tag('/search') do %>
-  <%= text_field_tag(:parameter, "#iubb") %>
-  <%= submit_tag "Search" %>
-<% end %>
+<h1><%= @search_term %></h1>
 <ul class="tweets">
   <% @tweets.each do |tweet| %>
     <li class="tweet">
       <div class="tweet-container">
         <div class="tweet-icon" style="background-image:url('<%= tweet["user"]["profile_image_url"] %>')"></div>
         <div class="tweet-contents">
-          <h5 class="username"><strong><a href="#" data-reveal-id="<%= tweet["user"]["screen_name"] %>"><%= tweet["user"]["screen_name"] %></a></strong></h5>
+          <h5 class="username"><a href="#" data-reveal-id="<%= tweet["user"]["screen_name"] %>"><%= tweet["user"]["screen_name"] %></a></h5>
           <h5 class="time"><%= time_ago_in_words(tweet["created_at"].to_datetime).gsub('about','') + ' ago' %></h5>
           <p><%= insert_links(tweet["text"]).html_safe %></p>
         </div>

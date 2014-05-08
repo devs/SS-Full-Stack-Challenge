@@ -9,11 +9,12 @@ Challenge::Application.routes.draw do
   match '/signin',    to: 'sessions#new',           via: 'get'
   match '/signout',   to: 'sessions#destroy',       via: 'delete'
   
-  match 'user_tweets/:screen_name', to: 'pages#user_tweets', via: 'get', as: 'user_tweets'
+  match '/user_tweets/:screen_name', to: 'pages#user_tweets', via: 'get', as: 'user_tweets'
+  
+  match '/search/:parameter', to: 'pages#search',   via: 'get', as: 'search'
+  post '/search' => 'pages#search'
   
   match '/requests',  to: 'tweet_requests#index',   via: 'get'
-  
-  
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

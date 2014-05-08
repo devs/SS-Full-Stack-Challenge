@@ -33,12 +33,13 @@ class Twitter_api
   end
   
   def tweets_for_term(bearer_token, term)
+    query = term.gsub(" ","+")
+    
     headers = {
       'Authorization' => "Bearer #{bearer_token}", 
     }
     
-    tweets = Twitter_api.get("/1.1/search/tweets.json?q=#{term}&count=20", :headers => headers)
-    
+    tweets = Twitter_api.get("/1.1/search/tweets.json?q=#{query}&count=20", :headers => headers)
   end
   
   def tweets_for_user(bearer_token, user)

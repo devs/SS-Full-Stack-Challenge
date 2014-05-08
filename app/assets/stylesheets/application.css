@@ -58,3 +58,12 @@ li.tweet {
   display: inline-block;
   opacity: .2;
 }
+.text {
+  padding: 0 20px 0 20px;
+}
+.logs {
+  width: 100%;
+}
+.center {
+  text-align: center;
+}
