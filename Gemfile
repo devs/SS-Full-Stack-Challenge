@@ -4,6 +4,7 @@ gem 'foundation-rails'
 gem 'httparty'
 gem 'twitter-text'
 gem 'figaro'
+gem 'rails_12factor'
 
 # Caching Stuff
 gem 'rack-cache'
