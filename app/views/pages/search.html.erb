@@ -17,11 +17,14 @@
       </div>
     
       <div id="tweet-<%= tweet["id_str"] %>" class="reveal-modal small" data-reveal>
-        <h3><%= tweet["user"]["name"] %></h3>
-        <h4><%= tweet["user"]["screen_name"] %></h4>
+        <h4><%= tweet["user"]["name"] %></h4>
+        <h4><small>@<%= tweet["user"]["screen_name"] %></small></h4>
+        <hr>
         <p><%= tweet["user"]["location"] %></p>
         <p><%= tweet["user"]["description"] %></p>
-        <p><%= link_to "view more", user_tweets_path(:screen_name => tweet["user"]["screen_name"]) %></p>
+        <div class="center">
+          <p><%= link_to "view more", user_tweets_path(:screen_name => tweet["user"]["screen_name"]), :class => "button radius round" %></p>
+        </div>
         <a class="close-reveal-modal">&#215;</a>
       </div>
     </li>

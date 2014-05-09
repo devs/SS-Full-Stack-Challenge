@@ -1,5 +1,8 @@
 <div class="header-container">
   <h1><%= @screen_name %></h1>
+  <h4><small><%= @tweets[1]["user"]["name"] %></small></h4>
+  <p><%= @tweets[1]["user"]["description"] %></p>
+  <p><%= @tweets[1]["user"]["location"] %></p>
 </div>
 <ul class="tweets">
   <% @tweets.each do |tweet| %>
@@ -7,18 +10,10 @@
       <div class="tweet-container">
         <div class="tweet-icon" style="background-image:url('<%= tweet["user"]["profile_image_url"] %>')"></div>
         <div class="tweet-contents">
-          <h5 class="username"><a href="#" data-reveal-id="tweet-<%= tweet["id_str"] %>"><%= tweet["user"]["screen_name"] %></a></h5>
+          <h5 class="username"><a href="#"><%= tweet["user"]["screen_name"] %></a></h5>
           <h5 class="time"><%= time_ago_in_words(tweet["created_at"].to_datetime).gsub('about','') + ' ago' %></h5>
           <p><%= insert_links(tweet["text"]).html_safe %></p>
         </div>
-      </div>
-      
-      <div id="tweet-<%= tweet["id_str"] %>" class="reveal-modal small" data-reveal>
-        <h3><%= tweet["user"]["name"] %></h3>
-        <h4><%= tweet["user"]["screen_name"] %></h4>
-        <p><%= tweet["user"]["location"] %></p>
-        <p><%= tweet["user"]["description"] %></p>
-        <a class="close-reveal-modal">&#215;</a>
       </div>
     </li>
   <% end %>
