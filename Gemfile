@@ -8,6 +8,7 @@ gem 'figaro'
 # Caching Stuff
 gem 'rack-cache'
 gem 'dalli'
+gem 'memcachier'
 gem 'kgio'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
