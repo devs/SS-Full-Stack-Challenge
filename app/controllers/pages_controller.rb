@@ -34,8 +34,8 @@ class PagesController < ApplicationController
   def search
     @search_term = params["parameter"]
     
-    if TweetRequest.dupe_request("user", @screen_name).recent.any?
-      @request = TweetRequest.dupe_request("user", @screen_name).recent.first
+    if TweetRequest.dupe_request("user", @search_term).recent.any?
+      @request = TweetRequest.dupe_request("user", @search_term).recent.first
     else
       @request = TweetRequest.new(:request_type => "search", :parameter => @search_term)
       @request.save
