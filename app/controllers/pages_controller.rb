@@ -33,8 +33,6 @@ class PagesController < ApplicationController
   
   def search
     @search_term = params["parameter"]
-    @query = @search_term.encode("UTF-8")
-    
     
     if TweetRequest.dupe_request("user", @screen_name).recent.any?
       @request = TweetRequest.dupe_request("user", @screen_name).recent.first

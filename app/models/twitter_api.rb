@@ -10,8 +10,8 @@ class Twitter_api
   format    :json
   
   def initialize
-    c_key = "JS1UdlQ0iRNHAmgvJcautARil"
-    c_secret = "DPpVFVwysbv0FBteq6SnYhKmjtWAsxLSGuU9Xd0jMxDCPE5hwg"
+    c_key = ENV["CONSUMER_KEY"]
+    c_secret = ENV["CONSUMER_SECRET"]
     c_key_secret = "#{c_key}:#{c_secret}"
     encoded_c_key_secret = Base64.strict_encode64(c_key_secret)
     
