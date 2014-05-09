@@ -1,0 +1,26 @@
+<div class="header-container">
+  <h1><%= @screen_name %></h1>
+</div>
+<ul class="tweets">
+  <% @tweets.each do |tweet| %>
+    <li class="tweet">
+      <div class="tweet-container">
+        <div class="tweet-icon" style="background-image:url('<%= tweet["user"]["profile_image_url"] %>')"></div>
+        <div class="tweet-contents">
+          <h5 class="username"><a href="#" data-reveal-id="<%= tweet["user"]["screen_name"] %>"><%= tweet["user"]["screen_name"] %></a></h5>
+          <h5 class="time"><%= time_ago_in_words(tweet["created_at"].to_datetime).gsub('about','') + ' ago' %></h5>
+          <p><%= insert_links(tweet["text"]).html_safe %></p>
+        </div>
+      </div>
+      
+      <div id="<%= tweet["user"]["screen_name"] %>" class="reveal-modal small" data-reveal>
+        <h3><%= tweet["user"]["name"] %></h3>
+        <h4><%= tweet["user"]["screen_name"] %></h4>
+        <p><%= tweet["user"]["location"] %></p>
+        <p><%= tweet["user"]["description"] %></p>
+        <p><a href="#">view more</a></p>
+        <a class="close-reveal-modal">&#215;</a>
+      </div>
+    </li>
+  <% end %>
+</ul>

@@ -1,0 +1,5 @@
+<% if request.env['PATH_INFO'] != "/requests" && signed_in? %>
+  <br />
+  <div class="center"><%= link_to "See API requests", requests_path, :class => "button radius round" %></div>
+  <br />
+<% end %>

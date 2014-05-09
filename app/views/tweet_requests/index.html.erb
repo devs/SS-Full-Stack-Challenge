@@ -1,0 +1,27 @@
+<div class="text">
+  <p>This app uses the Twitter API to make GET requests to see tweets for a particiular search term or user. To avoid excessive requests, the app caches results from each API call for a few minutes. Here you can view the last 100 API requests:</p>
+</div>
+
+<table class="logs">
+  <thead>
+    <tr>
+      <th>Time</th>
+      <th>Request Type</th>
+      <th>Parameter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @requests.each do |request| %>
+      <tr>
+        <td><%= request.created_at %></td>
+        <% if request.request_type == "search" %>
+          <td><%= request.request_type %></td>
+          <td><%= link_to request.parameter, search_path(:parameter => request.parameter) %></td>
+        <% else %>
+          <td><%= request.request_type %></td>
+          <td><%= link_to request.parameter, user_tweets_path(:screen_name => request.parameter) %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

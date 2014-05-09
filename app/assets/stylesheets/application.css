@@ -13,3 +13,82 @@
 
  *= require_tree .
  */
+.header {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  box-shadow: 12px 0 15px -4px rgba(31, 73, 125, 0.07), -12px 0 8px -4px rgba(31, 73, 125, 0.07) !important;
+}
+.content {
+  background: white;
+  box-shadow: 12px 0 15px -4px rgba(31, 73, 125, 0.07), -12px 0 8px -4px rgba(31, 73, 125, 0.07);
+  padding: 20px 0px 20px 0px !important;
+}
+.header-container {
+  text-align: center;
+  padding: 20px 20px 25px 20px;
+}
+.sign-up {
+  margin-bottom: 0px !important;
+}
+.search-bar {
+  font-size: 35px !important;
+  height: auto !important;
+  border-radius: 30px;
+  padding-left: 25px !important;
+  margin: 0 auto;
+  padding-right: 70px !important;
+}
+.search-submit {
+  display: none !important;
+}
+.tweets {
+  list-style-type: none;
+  margin-left: 0px;
+  border-top: 1px solid #cccccc;
+}
+li.tweet {
+  border-bottom: 1px solid #cccccc;
+}
+.tweet:hover {
+ background-color: #f8f8f8;
+ border-left: 3px solid #529CEC;
+ border-right: 3px solid #529CEC;
+}
+.tweet-container {
+  padding: 20px 20px 0px 20px;
+  display: inline-block;
+}
+.tweet-icon {
+  height:60px;
+  width: 60px;
+  background-size: contain;
+  border-radius: 30px;
+  display: inline-block;
+  float: left;
+  margin-right:20px;
+  margin-top: 2px;
+}
+.tweet-contents {
+  display: inline-block;
+  float: left;
+  width: calc(100% - 80px);
+}
+.tweet-info {
+  
+}
+.username {
+  display: inline-block;
+}
+.time {
+  display: inline-block;
+  opacity: .2;
+}
+.text {
+  padding: 0 20px 0 20px;
+}
+.logs {
+  width: 100%;
+}
+.center {
+  text-align: center;
+}
