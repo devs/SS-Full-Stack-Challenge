@@ -8,7 +8,7 @@ To run this yourself, clone, then set your Twitter consumer_key and consumer_sec
 
 <b>To Do</b>
 
-  - Clean up code by removing redudancies
-  - Better error handling
-  - Complete test coverage
-  - Just for fun, a complete UI overhaul
+*   Clean up code by removing redundancies
+*   Better error handling
+*   More complete test coverage
+*   Just for fun, a complete UI overhaul
