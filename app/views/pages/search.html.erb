@@ -1,4 +1,9 @@
-<h1><%= @search_term %></h1>
+<div class="header-container">
+  <%= form_tag('/search') do %>
+    <%= text_field_tag(:parameter, @search_term, :class => "search-bar") %>
+    <%= submit_tag "Search", :class => "search-submit" %>
+  <% end %>
+</div>
 <ul class="tweets">
   <% @tweets.each do |tweet| %>
     <li class="tweet">

@@ -1,25 +1,30 @@
-<%= form_tag('/search') do %>
-  <%= text_field_tag(:parameter, "#iubb") %>
-  <%= submit_tag "Search" %>
-<% end %>
+<div class="header-container">
+  <%= form_tag('/search') do %>
+    <%= text_field_tag(:parameter, "iubb", :class => "search-bar") %>
+    <%= submit_tag "Search", :class => "search-submit" %>
+  <% end %>
+</div>
 <ul class="tweets">
   <% @tweets.each do |tweet| %>
     <li class="tweet">
       <div class="tweet-container">
         <div class="tweet-icon" style="background-image:url('<%= tweet["user"]["profile_image_url"] %>')"></div>
         <div class="tweet-contents">
-          <h5 class="username"><strong><a href="#" data-reveal-id="<%= tweet["user"]["screen_name"] %>"><%= tweet["user"]["screen_name"] %></a></strong></h5>
+          <h5 class="username"><strong><a href="#" data-reveal-id="tweet-<%= tweet["id_str"] %>"><%= tweet["user"]["screen_name"] %></a></strong></h5>
           <h5 class="time"><%= time_ago_in_words(tweet["created_at"].to_datetime).gsub('about','') + ' ago' %></h5>
           <p><%= insert_links(tweet["text"]).html_safe %></p>
         </div>
       </div>
       
-      <div id="<%= tweet["user"]["screen_name"] %>" class="reveal-modal small" data-reveal>
-        <h3><%= tweet["user"]["name"] %></h3>
-        <h4><%= tweet["user"]["screen_name"] %></h4>
+      <div id="tweet-<%= tweet["id_str"] %>" class="reveal-modal small" data-reveal>
+        <h4><%= tweet["user"]["name"] %></h4>
+        <h4><small>@<%= tweet["user"]["screen_name"] %></small></h4>
+        <hr>
         <p><%= tweet["user"]["location"] %></p>
         <p><%= tweet["user"]["description"] %></p>
-        <p><%= link_to "view more", user_tweets_path(:screen_name => tweet["user"]["screen_name"]) %></p>
+        <div class="center">
+          <p><%= link_to "view more", user_tweets_path(:screen_name => tweet["user"]["screen_name"]), :class => "button radius round" %></p>
+        </div>
         <a class="close-reveal-modal">&#215;</a>
       </div>
     </li>
