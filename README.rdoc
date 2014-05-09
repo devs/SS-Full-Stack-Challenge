@@ -1,28 +1,7 @@
-== README
+== StackSocial Full Stack Challenge... App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple Rails app satisfies the requirements of StackSocial's {Full Stack Challenge}[http://www.https://github.com/stacksocial/code_tests/tree/master/fullstack]
 
-Things you may want to cover:
+It makes requests to the Twiter API, then caches and parses them, among other things.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+To run this yourself, clone, then set your Twitter consumer_key and consumer_secret env variables.
