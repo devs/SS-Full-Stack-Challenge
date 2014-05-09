@@ -20,7 +20,9 @@
     <div class="row">
       <div class="large-10 large-offset-1 columns content">
         <% flash.each do |key, value| %>
-          <div class="alert alert-<%= key %>"><%= value %></div>
+          <div data-alert class="alert-box radius <%= key %>"><%= value %>
+            <a href="#" class="close">&times;</a>
+          </div>
         <% end %>
         <%= yield %>
         <%= render 'layouts/footer' %>
