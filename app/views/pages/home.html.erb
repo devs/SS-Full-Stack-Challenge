@@ -1,6 +1,6 @@
 <div class="header-container">
   <%= form_tag('/search') do %>
-    <%= text_field_tag(:parameter, "iubb", :class => "search-bar") %>
+    <%= text_field_tag(:parameter, @default_search, :class => "search-bar") %>
     <%= submit_tag "Search", :class => "search-submit" %>
   <% end %>
 </div>

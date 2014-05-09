@@ -1,7 +1,14 @@
 == StackSocial Full Stack Challenge... App
 
-A simple Rails app satisfies the requirements of StackSocial's {Full Stack Challenge}[http://www.https://github.com/stacksocial/code_tests/tree/master/fullstack]
+A simple Rails app satisfies the requirements of StackSocial's {Full Stack Challenge}[https://github.com/stacksocial/code_tests/tree/master/fullstack]
 
 It makes requests to the Twiter API, then caches and parses them, among other things.
 
 To run this yourself, clone, then set your Twitter consumer_key and consumer_secret env variables.
+
+<b>To Do</b>
+
+  - Clean up code by removing redudancies
+  - Better error handling
+  - Complete test coverage
+  - Just for fun, a complete UI overhaul

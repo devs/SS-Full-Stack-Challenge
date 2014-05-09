@@ -1,5 +1,5 @@
 <% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
+<h1 class="center">Sign up</h1>
 
 <div class="row">
   <div class="large-offset-3 large-6 columns">
@@ -17,8 +17,10 @@
 
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation %>
-
-      <%= f.submit "SIGN UP", class: "button" %>
+      
+      <div class="center">
+        <%= f.submit "SIGN UP", class: "button round radius" %>
+      </div>
     <% end %>
   </div>
 </div>
