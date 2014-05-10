@@ -11,4 +11,7 @@ To run this yourself, clone, then set your Twitter consumer_key and consumer_sec
 *   Clean up code by removing redundancies
 *   Better error handling
 *   More complete test coverage
-*   Just for fun, a complete UI overhaul
+*   Just for fun, a UI overhaul
+
+See it in action:
+{http://glacial-tundra-7731.herokuapp.com/}[http://glacial-tundra-7731.herokuapp.com/]
